@@ -1,4 +1,5 @@
 package tests;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,7 +9,7 @@ public class LoginTest {
     static WebDriver driver;
 
     public static void main(String[] args){
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/vendor/chromedriver");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/login");
         driver.findElement( By.id("username")).sendKeys("tomsmith");
