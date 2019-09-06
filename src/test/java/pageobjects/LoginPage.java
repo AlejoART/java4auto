@@ -12,10 +12,12 @@ public class LoginPage extends BasePage{
     }
 
     public void typeUserName(String username){
+        getDriver().findElement(By.id("username")).clear();
         getDriver().findElement(By.id("username")).sendKeys(username);
     }
 
     public void typePassword(String password){
+        getDriver().findElement(By.id("password")).clear();
         getDriver().findElement(By.id("password")).sendKeys(password);
     }
 
