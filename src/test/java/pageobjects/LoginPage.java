@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage{
 
+    private By dataAlertError = By.cssSelector("#flash");
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -25,5 +27,11 @@ public class LoginPage extends BasePage{
         typeUserName(usr);
         typePassword(pwd);
         clickLoginButton();
+    }
+
+    public boolean errorMsgIsDisplayed(){
+        if (getDriver().findElement(dataAlertError).isDisplayed())
+            return true;
+            return false;
     }
 }
